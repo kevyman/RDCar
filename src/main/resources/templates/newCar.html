@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navigation :: head"></head>
+
+<body>
+<div th:replace="fragments/navigation :: nav"></div>
+
+<div class="container">
+    <h1>Car Management</h1>
+    <hr>
+    <h2>Save Car</h2>
+
+    <form action="#" th:action="@{/saveCar}" th:object="${car}"
+          method="POST">
+        <input type="text" th:field="*{cat}"
+               placeholder="Category" class="form-control mb-4 col-4">
+
+        <input type="number" th:field="*{bCo2}"
+               placeholder="(B) Co2y" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{brand}"
+               placeholder="Brand" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{model}" placeholder="Model" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{pack}" placeholder="Pack" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{fuel}" placeholder="Fuel" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{tankSize}" placeholder="Tank Size" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{towBracket}" placeholder="Has Tow Bracket?" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{rim}" placeholder="Rim" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{maxKmPerYear}" placeholder="Maximum Km per Year" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{idealKm}" placeholder="Ideal Km per Year" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{maxKm}" placeholder="Maximum total KM" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{listPrice}" placeholder="List Price" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{benefitKindMonth}" placeholder="Benefit Kind Month" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{upgradeCost}" placeholder="Upgrade Cost" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{downgradeBenefit}" placeholder="Downgrade Benefit" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Car</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/manageCars}"> Back to Car List</a>
+</div>
+<div th:replace="fragments/navigation :: footer"></div>
+</body>
+</html>

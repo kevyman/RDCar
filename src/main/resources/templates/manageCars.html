@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navigation :: head"></head>
+
+<body>
+
+<div th:replace="fragments/navigation :: nav"></div>
+
+<h1 class="Employee" style="padding-bottom:30px;">Cars</h1>
+
+<div class="table1">
+    <a th:href="@{/showNewCarForm}" class="btn btn-primary btn-sm mb-3"> + Add Car </a>
+    <table class="table table-striped table-dark table-responsive-md">
+        <thead>
+        <tr>
+            <th scope="col"><a th:href="@{'/pages/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">
+                Id</a></th>
+            <th scope="col"><a th:href="@{'/pages/' + ${currentPage} + '?sortField=bCo2&sortDir=' + ${reverseSortDir}}">
+                (B) Co2y</a></th>
+            <th scope="col"><a
+                    th:href="@{'/pages/' + ${currentPage} + '?sortField=brand&sortDir=' + ${reverseSortDir}}">
+                Brand</a></th>
+            <th scope="col"><a
+                    th:href="@{'/pages/' + ${currentPage} + '?sortField=model&sortDir=' + ${reverseSortDir}}">
+                Model</a></th>
+            <th scope="col"><a th:href="@{'/pages/' + ${currentPage} + '?sortField=fuel&sortDir=' + ${reverseSortDir}}">
+                Fuel</a></th>
+            <th scope="col"><a
+                    th:href="@{'/pages/' + ${currentPage} + '?sortField=tankSize&sortDir=' + ${reverseSortDir}}">
+                Tank Size</a></th>
+            <th scope="col">Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car: ${listCars}">
+            <td th:text="${car.id}"></td>
+            <td th:text="${car.bCo2}"></td>
+            <td th:text="${car.brand}">Audi</td>
+            <td th:text="${car.model}">A3 Sportback 1</td>
+            <td th:text="${car.fuel}">D</td>
+            <td th:text="${car.tankSize}">50 L</td>
+            <td>
+                <a th:href="@{/showFormForCarUpdate/{id}(id=${car.id})}"><img
+                        style="margin-left:20px;margin-right:18px;" class="editIcon" src="../images/edit.png">
+                </a>
+
+                <a th:href="@{/deleteCar/{id}(id=${car.id})}"><img class="editIcon" src="../images/trash.png"> </a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if = "${totalPages > 1}">
+        <div class = "row col-sm-10">
+            <div class = "col-sm-2">
+                Total Rows: [[${totalItems}]]
+            </div>
+            <div class = "col-sm-1">
+					<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+						<a th:if="${currentPage != i}" th:href="@{'/pages/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+					</span>
+            </div>
+            <div class = "col-sm-1">
+                <a th:if="${currentPage < totalPages}" th:href="@{'/pages/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+                <span th:unless="${currentPage < totalPages}">Next</span>
+            </div>
+
+            <div class="col-sm-1">
+                <a th:if="${currentPage < totalPages}" th:href="@{'/pages/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+                <span th:unless="${currentPage < totalPages}">Last</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/navigation :: footer"></div>
+
+
+</body>
+</html>
+

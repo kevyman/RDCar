@@ -1,0 +1,96 @@
+.top-container{
+    background-color:  #F6DFEB   /*  #FFF5FD; */
+}
+body{
+  background-color: #F6DFEB !important;
+  margin: 0;
+}
+h1 {
+    font-size: 90px;
+    margin: 50px auto 0 auto; /* goes in cirlce top,right,bot,left*/
+    font-family: 'Montserrat', sans-serif;
+    color: #293B5F;
+    text-align: center;
+}
+.Employee{
+  font-size: 100px;
+
+}
+.bg-image{
+ width: 1730px;
+ height: 900px;
+ opacity: 0.6;
+ display: block;
+ margin-top:-216px;;
+ /* margin-top:-1444px; */
+}
+
+.hrDotted{
+  border-width: 10px;
+  border-style: dotted;
+  border-color: #FF96AD;
+  border-bottom-style: none;
+  height: 0;
+  width: 15%;
+  margin-top: 120px;
+  margin-bottom: 90px;
+}
+.middle-container{
+  margin-top: 0;   /*100 for top and bot, 0 for right and left*/
+ background-color: #F6DFEB;
+ height: 200px;
+}
+.table1{
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+.buttonE{
+  text-align: center;
+  margin-top: 35px;
+  color: #E93B81;
+
+
+}
+.bottom-container{
+  background-color:#3C8DAD;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 655.805px;
+
+
+}
+.editIcon{
+  height: 20px;
+  width: 20px;
+}
+.nav-link{
+  margin: auto 50px auto 20px;
+  padding-right: 70px;
+}
+.realdolmen-title-top{
+font-family: 'Pacifico', cursive;
+font-size: 40px;
+color: #0C4271 ;
+margin-top:160px;;
+
+}
+.footer-link{
+  color: #D1D9D9;
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px 20px ;
+  text-decoration: none;
+  font-size: 25px;
+
+
+
+
+}
+.footer-link:hover{
+  color:#eafF5ABC96f6;
+  text-decoration: none;
+}

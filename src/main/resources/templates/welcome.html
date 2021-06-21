@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Sacramento&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+    <title>RDCar</title>
+</head>
+
+<body>
+
+<div th:replace="fragments/navigation :: nav"></div>
+
+
+<h1 class="realdolmen-title-top">Realdolmen Cars.</h1>
+<img class="bg-image" src="images/carWallpaper.PNG" alt="bg-img">
+
+<div class="middle-container">
+
+    <hr class="hrDotted">
+
+    <div class="buttonE">
+
+        <div style="margin-top:100px;margin-bottom:60px;">
+            <h1 class="Employee">Employees</h1>
+        </div>
+        <a th:href="@{/manageEmployees}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Go To
+            Employees</a>
+
+        <hr class="hrDotted">
+
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h1 class="Employee">Cars</h1>
+        </div>
+        <a style="margin-bottom:100px;" th:href="@{/manageCars}" class="btn btn-secondary btn-lg active"
+           role="button" aria-pressed="true">Go To Cars</a>
+
+    </div>
+    <hr class="hrDotted" style="margin-top:-7px;margin-bottom:110px;">
+
+
+    <div th:replace="fragments/navigation :: footer"></div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

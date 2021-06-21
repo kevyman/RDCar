@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/navigation :: head"></head>
+<body>
+<div th:replace="fragments/navigation :: nav"></div>
+	<div class="container">
+		<h1>Employee Management</h1>
+		<hr>
+		<h2>Update Employee</h2>
+
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="POST">
+			
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{email}" class="form-control mb-4 col-4">
+
+			<select th:field="*{funcLvl}" class="form-control mb-4 col-4">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="6+">6+</option>
+			</select>
+				
+				<button type="submit" class="btn btn-info col-2"> Update Employee</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/manageEmployees}"> Back to Employee List</a>
+	</div>
+
+	<div th:replace="fragments/navigation :: footer"></div>
+</body>
+</html>
