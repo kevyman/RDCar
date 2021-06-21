@@ -2,7 +2,9 @@ package com.jwalterwilkos.controller;
 
 import java.util.List;
 
+import com.jwalterwilkos.model.Car;
 import com.jwalterwilkos.model.Employee;
+import com.jwalterwilkos.service.CarService;
 import com.jwalterwilkos.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,6 +21,9 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+
+	@Autowired
+	private CarService carService;
 	
 	// display list of employees
 	@GetMapping("/manageEmployees")
@@ -46,9 +51,13 @@ public class EmployeeController {
 		
 		// get employee from the service
 		Employee employee = employeeService.getEmployeeById(id);
-		
-		// set employee as a model attribute to pre-populate the form
+		List<Car> listCars = carService.getAllCars();
+
+
+				// set employee as a model attribute to pre-populate the form
 		model.addAttribute("employee", employee);
+		model.addAttribute("listCars", listCars);
+
 		return "updateEmployee";
 	}
 	
